@@ -2,9 +2,9 @@
 
 There's a debate to be had about whether using JavaScript or TypeScript leads to better outcomes when building a project. The introduction of using JSDoc annotations to type a JavaScript codebase introduces a new dynamic to this discussion.  This post will investigate what that looks like, and come to an (opinionated) conclusion.
 
-If you'd talked to me in 2018 it would have been a solid "recommend TypeScript, steer away from JavaScript". The rationale is simple: I'm exceedingly convinced of the value that static typing provides in terms of productivity / avoiding bugs in production.
+If you'd talked to me in 2018, I would have solidly recommended using TypeScript, and steering away from JavaScript. The rationale is simple: I'm exceedingly convinced of the value that static typing provides in terms of productivity / avoiding bugs in production. I appreciate this can be a contentious issue, but that is my settled opinion on the subject.
 
-TypeScript has long had a good static typing story. JavaScript is dynamically typed and so historically has not had a good static typing story. Thanks to TypeScript support for JSDoc, these days there's a little more nuance in this discussion.
+TypeScript has long had a good static typing story. JavaScript is dynamically typed and so historically has not. Thanks to TypeScript support for JSDoc, JavaScript can now be statically type checked.
 
 ## What is JSDoc JavaScript?
 
@@ -39,7 +39,7 @@ That, in fact, was the rationale of the webpack team. A little bit of history: w
 
 TypeScript had been quietly adding support for type checking JavaScript with the assistance of JSDoc since way back with the `--checkJs` compiler option in [TypeScript 2.3](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#errors-in-js-files-with---checkjs).
 
-A community member by the name of [Mohsen Azimi](https://twitter.com/mohsen____) experimentally started out using this approach to type check the webpack codebase. [This PR](https://github.com/webpack/webpack/pull/6862) ended up being a test case that helped both improve the type checking of JavaScript by TypeScript, and popularise using JSDoc to type check JavaScript codebases.
+A community member by the name of [Mohsen Azimi](https://twitter.com/mohsen____) experimentally started out using this approach to type check the webpack codebase. [His PR](https://github.com/webpack/webpack/pull/6862) ended up being a test case that helped improve the type checking of JavaScript by TypeScript.  TypeScript v2.9 shipped with a whole host of JSDoc improvements as a consequence of the webpack work. Being such a widely used project this also helped popularise the approach of using JSDoc to type check JavaScript codebases. It demonstrated that this approach could work on a really significantly sized codebase.
 
 These days, JSDoc type checking with TypeScript is extremely powerful. Whilst not quite on par with TypeScript (not all TypeScript syntax is supported in JSDoc) the gap in functionality is pretty small.
 
@@ -76,8 +76,14 @@ function stringsStringStrings(p1, p2, p3, p4) {
 }
 ```
 
-It may be my own familiarity with TypeScript speaking, but I find that the TypeScript is easier to read and comprehend as compared to the JSDoc JavaScript alternative.
+It may be my own familiarity with TypeScript speaking, but I find that the TypeScript is easier to read and comprehend as compared to the JSDoc JavaScript alternative. The fact that all JSDoc annotations live in comments, rather than directly in syntax, makes it harder to follow. (It certainly doesn't help that many VS Code themes present comments in a very faint colour.)
 
-The final reason for favouring TypeScript comes down to falling into the ["pit of success"](https://blog.codinghorror.com/falling-into-the-pit-of-success/). You're cutting *against* the grain when it comes to static typing and JavaScript. You can have it, but you have to work that bit harder to ensure that you have statically typed code. On the other hand, you're cutting *with* the grain when it comes to static typing and TypeScript. You have to work hard to opt out of static typing. The TypeScript defaults tend towards static typing, whilst the JavaScript defaults tend away. 
+My final reason for favouring TypeScript comes down to falling into the ["pit of success"](https://blog.codinghorror.com/falling-into-the-pit-of-success/). You're cutting *against* the grain when it comes to static typing and JavaScript. You can have it, but you have to work that bit harder to ensure that you have statically typed code. On the other hand, you're cutting *with* the grain when it comes to static typing and TypeScript. You have to work hard to opt out of static typing. The TypeScript defaults tend towards static typing, whilst the JavaScript defaults tend away.
+
+As someone who very much favours static typing, you can imagine how this is compelling to me!
+
+## It's your choice!
 
 So in a way, I don't feel super strongly whether people use JavaScript or TypeScript. But having static typing will likely be a benefit to new projects. Bottom line, I'm keen that people fall into the "pit of success", so my recommendation for a new project would be TypeScript.
+
+I really like JSDoc myself, and will often use it on small projects. It's a fantastic addition to TypeScript's capabilities. For bigger projects, I'll likely go with TypeScript from the get go. But really, this is a choice - and either is great.
