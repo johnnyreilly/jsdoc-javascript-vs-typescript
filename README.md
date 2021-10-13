@@ -37,7 +37,7 @@ Perhaps you're writing simple node scripts and you'd like a little type safety t
 
 That, in fact, was the rationale of the webpack team. A little bit of history: webpack has always been a JavaScript codebase. As the codebase grew and grew, there was often discussion about using static typing. However, having a compilation step wasn't desired.
 
-TypeScript had been quietly adding support for type checking JavaScript with the assistance of JSDoc since way back with the `--checkJs` compiler option in [TypeScript 2.3](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#errors-in-js-files-with---checkjs).
+TypeScript had been quietly adding support for type checking JavaScript with the assistance of JSDoc for some time. Initial support arrived with the `--checkJs` compiler option in [TypeScript 2.3](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#errors-in-js-files-with---checkjs).
 
 A community member by the name of [Mohsen Azimi](https://twitter.com/mohsen____) experimentally started out using this approach to type check the webpack codebase. [His PR](https://github.com/webpack/webpack/pull/6862) ended up being a test case that helped improve the type checking of JavaScript by TypeScript.  TypeScript v2.9 shipped with a whole host of JSDoc improvements as a consequence of the webpack work. Being such a widely used project this also helped popularise the approach of using JSDoc to type check JavaScript codebases. It demonstrated that this approach could work on a really significantly sized codebase.
 
