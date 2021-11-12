@@ -88,7 +88,7 @@ whuditlooklike
 let myString: string; 
 ```
 
-⬇️
+[⬇️](https://github.dev/johnnyreilly/jsdoc-javascript-vs-typescript/tree/feat/talk)
 
 ```ts
 /** @type {string} */
@@ -103,11 +103,25 @@ various formats - we'll look at JSON-LD
 they all live tucked away in your HTML
 </aside>
 
-## Three formats
+```ts
+function doIt(p1: string, p2?: string, p3 = "test"): string {
+  // ...
+}
+```
 
-- [Microdata](https://en.wikipedia.org/wiki/Microdata_(HTML))
-- [RDFa](https://en.wikipedia.org/wiki/RDFa)
-- [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD) * ([Google's fave](https://www.searchenginejournal.com/google-structured-data-preference/297479/))
+[⬇️](https://github.dev/johnnyreilly/jsdoc-javascript-vs-typescript/tree/feat/talk)
+
+```ts
+/**
+ * @param {string}  p1
+ * @param {string=} p2
+ * @param {string} [p3="test"]
+ * @return {string}
+ */
+function doIt(p1, p2, p3) {
+  // ...
+}
+```
 
 ---
 
