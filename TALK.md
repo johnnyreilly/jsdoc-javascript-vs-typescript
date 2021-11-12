@@ -7,7 +7,7 @@ slideNumber: false
 showNotes: false
 title: "TypeScript alternatives: JSDoc JavaScript"
 ---
-<!-- .slide: data-transition="slide" data-background="./images/faded-rich-results.png"  -->
+<!-- .slide: data-transition="slide" data-background="./images/typescript-vs-jsdoc-javascript.png"  -->
 ## TypeScript alternatives:
 ## JSDoc JavaScript
 ### [LogRocket](https://www.logrocket.com) with [@johnny_reilly](https://twitter.com/johnny_reilly)
@@ -20,7 +20,6 @@ general welcome
 
 ---
 
-<!-- .slide: data-transition="slide" data-background="./images/typescript-4-4-more-readable-code.png" -->
 ## `whoami`
 
 - [@johnny_reilly](https://twitter.com/johnny_reilly) ❤️🌻
@@ -44,6 +43,9 @@ What if I want static typing for my JavaScript and I don't want a build step?
 <aside class="notes">
 Classically you would write TypeScript in ts files
 And compile to JS files - erasing the type system
+
+that's significant - you don't run your source code,
+you run your compiled code
 </aside>
 
 ## TypeScript = JavaScript + static typing
@@ -64,26 +66,35 @@ JSDoc itself actually dates way back to 1999.  According to the [Wikipedia entry
 
 ---
 
+<!-- .slide: data-transition="slide" data-background="./images/typescript-2-3.png"  -->
 <aside class="notes">
-Ranking in search results matters
-Structured data is a way to help google understand your content
-This will get it in front of more eyeballs
-We'll look at what Structured Data is, and build a simple React app with it
+typescript started supporting type checking based upon a flavour of JSDoc
 </aside>
 
-## Structured data:
-## the secret categorisation language of Google
+## [TypeScript 2.3](https://devblogs.microsoft.com/typescript/announcing-typescript-2-3/#type-checking-in-javascript-files-with--ts-check-and---checkjs)
+## the birth of `--checkJs`
+
+> in TypeScript 2.3, we’re experimenting with a new “soft” form of checking in .js files, which brings many of the advantages of writing TypeScript without actually writing .ts files.
 
 ---
 
 <aside class="notes">
-there's many official schemas
-maintained by search engine folk
+whuditlooklike
 </aside>
 
-## [Schema.org](https://schema.org)
+## From TypeScript to JavaScript JSDoc
 
-![Screenshot of schema.org](images/screenshot-schema-org.png)
+```ts
+let myString: string; 
+```
+
+⬇️
+
+```ts
+/** @type {string} */
+let myString; 
+```
+
 
 ---
 
