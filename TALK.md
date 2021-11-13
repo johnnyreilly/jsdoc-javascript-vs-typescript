@@ -183,30 +183,42 @@ function walk(p) {
 
 ---
 
-## webpack goes JSDoc
+### [webpack goes JSDoc](https://github.com/webpack/webpack/pull/6862)
 
 <aside class="notes">
 you might be thinking this is a toy
-but someone came to put it to the test
+but someone came to put it to the test on webpack
+Mohsen Azimi
 </aside>
 
+[![photograph of Mohsen Azimi](images/mohsen-azimi.jpg)<br />Mohsen Azimi](https://twitter.com/mohsen____)
 
-```html
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org/",
-    "@type": "Recipe",
-    "name": "Chocolate Brownie",
-    "author": {
-        "@type": "Person",
-        "name": "John Reilly"
-    },
-    "datePublished": "2014-09-01",
-    "description": "The most amazing chocolate brownie recipe",
-    "prepTime": "PT60M"
-}
-</script>
-```
+
+---
+
+### What happened next?
+
+<aside class="notes">
+TypeScript 2.9 shipped 
+</aside>
+
+- webpack became strongly typed
+
+- [TypeScript JSDoc support improved in TS 2.9](https://github.com/webpack/webpack/pull/6862)
+
+> The amazing TypeScript team have fixed many issues with the compiler when checking JavaScript code. Those changes are currently (April 11) in the nightly builds of version 2.9.
+
+---
+
+### What happened next?
+
+<aside class="notes">
+TypeScript 2.9 shipped 
+</aside>
+
+- [TypeScript 3.7 - generate declaration files from JSDoc](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#--declaration-and---allowjs)
+
+> with TypeScript 3.7, users can write libraries in JSDoc annotated JavaScript and support TypeScript users.
 
 ---
 
@@ -215,5 +227,7 @@ but someone came to put it to the test
 - [TypeScript JSDoc Reference](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)
 
 - [webpack embraces JSDoc](https://github.com/webpack/webpack/pull/6862)
+
+- [TypeScript 3.7 - generate declaration files from JSDoc](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#--declaration-and---allowjs)
 
 - [webpack strongly typing `LoaderContext`](https://github.com/webpack/webpack/pull/13164)
