@@ -48,7 +48,8 @@ that's significant - you don't run your source code,
 you run your compiled code
 </aside>
 
-## TypeScript = JavaScript + static typing
+### TypeScript = 
+### JavaScript + static typing
 
 [Compile TS -> JS](https://www.typescriptlang.org/play?#code/JYOwLgpgTgZghgYwgAgLIoN4ChnJHAWwgC5kBnMKUAcwG4dkBXKAG1IqpDqwF8ssEAexAVkRUumQBeZNlz5xyAOQArQQAsQIAJ5QIwFi21KANA2Ztl6sGAAOZYgHpHAIxaDqAOjWadeg0aeQgRKvPxCIoIsEJ7u1AAUAAao2niEKMBkyAAkGESeChA8yHAgACbIAJLIbh4lYDl5MRY8iQCUQA)
 
@@ -58,7 +59,7 @@ you run your compiled code
 JSDoc itself actually dates way back to 1999.  According to the [Wikipedia entry](https://en.wikipedia.org/wiki/JSDoc)
 </aside>
 
-## JSDoc JavaScript
+### JSDoc JavaScript
 
 > JSDoc is a markup language used to annotate JavaScript source code files. Using comments containing JSDoc, programmers can add documentation describing the application programming interface of the code they're creating.
  
@@ -71,8 +72,8 @@ JSDoc itself actually dates way back to 1999.  According to the [Wikipedia entry
 typescript started supporting type checking based upon a flavour of JSDoc
 </aside>
 
-## [TypeScript 2.3](https://devblogs.microsoft.com/typescript/announcing-typescript-2-3/#type-checking-in-javascript-files-with--ts-check-and---checkjs)
-## the birth of `--checkJs`
+### [TypeScript 2.3](https://devblogs.microsoft.com/typescript/announcing-typescript-2-3/#type-checking-in-javascript-files-with--ts-check-and---checkjs)
+### the birth of `--checkJs`
 
 > in TypeScript 2.3, we’re experimenting with a new “soft” form of checking in .js files, which brings many of the advantages of writing TypeScript without actually writing .ts files.
 
@@ -82,7 +83,7 @@ typescript started supporting type checking based upon a flavour of JSDoc
 whuditlooklike
 </aside>
 
-## From TypeScript to JavaScript JSDoc
+### From TypeScript to JavaScript JSDoc
 
 ```ts
 let myString: string; 
@@ -95,13 +96,13 @@ let myString: string;
 let myString; 
 ```
 
-
 ---
 
 <aside class="notes">
-various formats - we'll look at JSON-LD
-they all live tucked away in your HTML
+functions
 </aside>
+
+### Functions
 
 ```ts
 function doIt(p1: string, p2?: string, p3 = "test"): string {
@@ -125,7 +126,70 @@ function doIt(p1, p2, p3) {
 
 ---
 
-## [JSON-LD: Recipe](https://schema.org/Recipe)
+<aside class="notes">
+functions
+</aside>
+
+### Objects
+
+```ts
+type SpecialType = {
+    prop1: string;
+    prop2: number;
+    prop3?: number | undefined;
+    prop4?: number | undefined;
+    prop5?: number | undefined;
+}
+```
+
+[⬇️](https://github.dev/johnnyreilly/jsdoc-javascript-vs-typescript/tree/feat/talk)
+
+```ts
+/**
+ * @typedef {Object} SpecialType - creates a new type named 'SpecialType'
+ * @property {string} prop1 - a string property
+ * @property {number} prop2 - a number property
+ * @property {number=} prop3 - an optional number property
+ * @prop {number} [prop4] - an optional number property
+ * @prop {number} [prop5=42] - an optional number property with default
+ */
+```
+
+---
+
+### Declaration imports
+
+<!-- .slide: style="text-align: left;" -->
+<aside class="notes">
+a best of both worlds approach for types
+</aside>
+
+filename: `types.d.ts`
+```ts
+export type Pet = {
+  name: string,
+};
+```
+
+filename: `import-type.js`
+```ts
+/**
+ * @param { import("./types").Pet } p
+ */
+function walk(p) {
+  console.log(`Walking ${p.name}...`);
+}
+```
+
+---
+
+## webpack goes JSDoc
+
+<aside class="notes">
+you might be thinking this is a toy
+but someone came to put it to the test
+</aside>
+
 
 ```html
 <script type="application/ld+json">
@@ -146,111 +210,10 @@ function doIt(p1, p2, p3) {
 
 ---
 
-<aside class="notes">
-Google for "best brownie recipe"
-</aside>
-
-### Structured data in action: 
-### "rich results"
-
-<aside class="notes">
-powered by structured data.
-</aside>
-
-![screenshot of google search results for "best brownie recipe" including a rich text results set at the top of the list showing recipes from various sources](images/screenshot-of-rich-text-results.png)
-
----
-
-![](images/screenshot-bbc-good-food-brownies.png)
-
-https://www.bbcgoodfood.com/recipes/best-ever-chocolate-brownies-recipe
-
----
-
-### Brownie source
-
-<aside class="notes">
-If we click on the first link, we're taken to the recipe in question. Looking at the HTML of that page we find a number of JSON-LD sections:
-</aside>
-
-![screenshot of JSON-LD sections in the BBC Good Food website](images/structured-data-in-action.png)
-
----
-
-### Brownie source
-
-<aside class="notes">
-look at the `@type` property we can see it's a `"Recipe"`
-</aside>
-
-![screenshot of JSON-LD section transformed into a JavaScript Object Literal](images/single-structured-data-as-JSON.png)
-
-https://schema.org/Recipe
-
----
-
-<aside class="notes">
-Google have first class support
-for certain structured data
-</aside>
-
-## Rich Results:
-#### how Google uses structured data
-
-https://developers.google.com/search/docs/advanced/structured-data/search-gallery
-
----
-
-## Rich Results Test
-
-https://search.google.com/test/rich-results
-
----
-
-<aside class="notes">
-When I wrote the original blog post
-I took a create-react-app
-and added structured data
-</aside>
-
-## React: add structured data support
-
-[![screenshot of website with structured data](images/screenshot-of-article.png =700x)](https://johnnyreilly.github.io/structured-data-seo-and-react/)
-
----
-
-<aside class="notes">
-When I wrote the original blog post
-I took a create-react-app
-and added structured data
-</aside>
-
-## view source
-
-https://github.dev/johnnyreilly/structured-data-seo-and-react
-
----
-
-## The convent with structured data
-
-<aside class="notes">
-What about a real website?
-I have an aunt that's a nun...
-Show rich results for the convent
-</aside>
-
-- https://www.poorclaresarundel.org/
-- [PR to add initial structured data](https://github.com/johnnyreilly/poor-clares-arundel-koa/pull/57)
-- [PR to add events structured data](https://github.com/johnnyreilly/poor-clares-arundel-koa/pull/58)
-
----
-
 ### Links
 
-- [Original blog post](https://blog.logrocket.com/react-structured-data-and-seo/)
+- [TypeScript JSDoc Reference](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)
 
-- [PR with initial structure data support to Docusaurus](https://github.com/facebook/docusaurus/pull/5322)
+- [webpack embraces JSDoc](https://github.com/webpack/webpack/pull/6862)
 
-- [Rich Results Test](https://search.google.com/test/rich-results)
-
-- [How Google uses structured data](https://developers.google.com/search/docs/advanced/structured-data/search-gallery)
+- [webpack strongly typing `LoaderContext`](https://github.com/webpack/webpack/pull/13164)
