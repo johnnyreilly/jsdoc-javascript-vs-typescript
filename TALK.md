@@ -70,6 +70,8 @@ JSDoc itself actually dates way back to 1999.  According to the [Wikipedia entry
 <!-- .slide: data-transition="slide" data-background="./images/typescript-2-3.png"  -->
 <aside class="notes">
 typescript started supporting type checking based upon a flavour of JSDoc
+
+"we mainly see it as part of a strategy to let people incrementally adopt TypeScript."
 </aside>
 
 ### [TypeScript 2.3](https://devblogs.microsoft.com/typescript/announcing-typescript-2-3/#type-checking-in-javascript-files-with--ts-check-and---checkjs)
@@ -219,6 +221,24 @@ TypeScript 2.9 shipped
 - [TypeScript 3.7 - generate declaration files from JSDoc](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#--declaration-and---allowjs)
 
 > with TypeScript 3.7, users can write libraries in JSDoc annotated JavaScript and support TypeScript users.
+
+---
+
+### JSDoc limitations
+
+<aside class="notes">
+
+</aside>
+
+- JSDoc does not have feature parity with TS
+- Support for TS features in JSDoc lags
+- eg [`as const`](https://www.typescriptlang.org/play?ts=4.5.0-beta#code/MYewdgzgLgBAhhAwuaApCMC8MD0AqPGAASgE8AHAUxgG9RIoBfGPHGAChpjDgFtKAXDADkqEAAswwmIwCUAbgBQi+tHhIUUACoZstbn0Eixk6cwQxVUeUA) support landed in [TS 3.4](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html), JSDoc support landed in [TS 4.5](https://github.com/microsoft/TypeScript/pull/45464)
+
+```ts
+const asConstJs = /** @type {const} */ ({ name: 'John' });
+
+const asConstTs =  { name: 'John' } as const;
+```
 
 ---
 
