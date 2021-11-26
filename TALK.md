@@ -216,6 +216,8 @@ TypeScript 2.9 shipped
 
 <aside class="notes">
 TypeScript 2.9 shipped 
+
+as of webpack 5, shipped with .d.ts generated from JSDoc
 </aside>
 
 - [TypeScript 3.7 - generate declaration files from JSDoc](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#--declaration-and---allowjs)
@@ -232,13 +234,27 @@ TypeScript 2.9 shipped
 
 - JSDoc does not have feature parity with TS
 - Support for TS features in JSDoc lags
-- eg [`as const`](https://www.typescriptlang.org/play?ts=4.5.0-beta#code/MYewdgzgLgBAhhAwuaApCMC8MD0AqPGAASgE8AHAUxgG9RIoBfGPHGAChpjDgFtKAXDADkqEAAswwmIwCUAbgBQi+tHhIUUACoZstbn0Eixk6cwQxVUeUA) support landed in [TS 3.4](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html), JSDoc support landed in [TS 4.5](https://github.com/microsoft/TypeScript/pull/45464)
+- eg [`as const`](https://www.typescriptlang.org/play?filetype=js#code/MYewdgzgLgBAhhAwuaApCMC8MD0AqPGAASgE8AHAUxgG9RIoBfGPHAChpjDgFtKAuGAHJUIABZghMRgEoA3ACggA) support landed in [TS 3.4](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html), JSDoc support landed in [TS 4.5](https://github.com/microsoft/TypeScript/pull/45464)
 
 ```ts
 const asConstJs = /** @type {const} */ ({ name: 'John' });
 
 const asConstTs =  { name: 'John' } as const;
 ```
+
+---
+
+### What should you pick?
+
+<aside class="notes">
+typescript easier to read
+
+jsdoc if need no build step
+
+typescript team see JSDoc mostly as a way to easy onboarding
+</aside>
+
+You decide!
 
 ---
 
