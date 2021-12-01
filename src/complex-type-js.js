@@ -6,3 +6,6 @@
  * @prop {number} [prop4] - an optional number property of SpecialType
  * @prop {number} [prop5=42] - an optional number property of SpecialType with default
  */
+
+/** @type {SpecialTypeInJs} */
+let obj;

@@ -4,7 +4,7 @@
  * @param {string} [p3="test"]
  * @return {string}
  */
-function doItJs(p1, p2, p3) {
+function doItJs(p1, p2, p3 = "test") {
     // ...
 }
   
