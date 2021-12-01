@@ -121,7 +121,7 @@ function doIt(p1: string, p2?: string, p3 = "test"): string {
  * @param {string} [p3="test"]
  * @return {string}
  */
-function doIt(p1, p2, p3) {
+function doIt(p1, p2, p3 = "test") {
   // ...
 }
 ```
@@ -195,6 +195,11 @@ Mohsen Azimi
 
 [![photograph of Mohsen Azimi](images/mohsen-azimi.jpg)<br />Mohsen Azimi](https://twitter.com/mohsen____)
 
+---
+
+### What happened next?
+
+[![screenshot of tweet: https://twitter.com/TheLarkInn/status/984479953927327744](images/webpack-jsdoc-tweet.png)](https://twitter.com/TheLarkInn/status/984479953927327744)
 
 ---
 
@@ -203,8 +208,6 @@ Mohsen Azimi
 <aside class="notes">
 TypeScript 2.9 shipped 
 </aside>
-
-- webpack became strongly typed
 
 - [TypeScript JSDoc support improved in TS 2.9](https://github.com/webpack/webpack/pull/6862)
 
