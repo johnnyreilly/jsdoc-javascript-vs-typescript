@@ -1,0 +1,2 @@
+/** @type {string} */
+let myString; 
