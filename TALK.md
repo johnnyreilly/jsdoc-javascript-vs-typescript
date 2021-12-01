@@ -91,7 +91,7 @@ whuditlooklike
 let myString: string; 
 ```
 
-[⬇️](https://github.dev/johnnyreilly/jsdoc-javascript-vs-typescript/tree/feat/talk)
+[⬇️](https://github.dev/johnnyreilly/jsdoc-javascript-vs-typescript/tree/main)
 
 ```ts
 /** @type {string} */
@@ -112,7 +112,7 @@ function doIt(p1: string, p2?: string, p3 = "test"): string {
 }
 ```
 
-[⬇️](https://github.dev/johnnyreilly/jsdoc-javascript-vs-typescript/tree/feat/talk)
+[⬇️](https://github.dev/johnnyreilly/jsdoc-javascript-vs-typescript/tree/main)
 
 ```ts
 /**
@@ -144,7 +144,7 @@ type SpecialType = {
 }
 ```
 
-[⬇️](https://github.dev/johnnyreilly/jsdoc-javascript-vs-typescript/tree/feat/talk)
+[⬇️](https://github.dev/johnnyreilly/jsdoc-javascript-vs-typescript/tree/main)
 
 ```ts
 /**
